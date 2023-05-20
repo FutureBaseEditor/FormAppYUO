@@ -28,54 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Hangisinden = new System.Windows.Forms.ComboBox();
+            this.Hangisine = new System.Windows.Forms.ComboBox();
+            this.Girilen = new System.Windows.Forms.TextBox();
+            this.Sonuc = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // Hangisinden
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.Hangisinden.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Hangisinden.FormattingEnabled = true;
+            this.Hangisinden.Items.AddRange(new object[] {
             "C",
             "F",
-            "K"});
-            this.comboBox1.Location = new System.Drawing.Point(54, 198);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 0;
+            "K",
+            "R"});
+            this.Hangisinden.Location = new System.Drawing.Point(54, 198);
+            this.Hangisinden.Name = "Hangisinden";
+            this.Hangisinden.Size = new System.Drawing.Size(151, 28);
+            this.Hangisinden.TabIndex = 1;
+            this.Hangisinden.SelectedIndexChanged += new System.EventHandler(this.Hangisinden_SelectedIndexChanged);
             // 
-            // comboBox2
+            // Hangisine
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.Hangisine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Hangisine.FormattingEnabled = true;
+            this.Hangisine.Items.AddRange(new object[] {
             "C",
             "F",
-            "K"});
-            this.comboBox2.Location = new System.Drawing.Point(54, 266);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(151, 28);
-            this.comboBox2.TabIndex = 1;
+            "K",
+            "R"});
+            this.Hangisine.Location = new System.Drawing.Point(54, 266);
+            this.Hangisine.Name = "Hangisine";
+            this.Hangisine.Size = new System.Drawing.Size(151, 28);
+            this.Hangisine.TabIndex = 2;
+            this.Hangisine.SelectedIndexChanged += new System.EventHandler(this.Hangisine_SelectedIndexChanged);
             // 
-            // textBox1
+            // Girilen
             // 
-            this.textBox1.Location = new System.Drawing.Point(54, 130);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 27);
-            this.textBox1.TabIndex = 2;
+            this.Girilen.Location = new System.Drawing.Point(54, 130);
+            this.Girilen.Name = "Girilen";
+            this.Girilen.Size = new System.Drawing.Size(151, 27);
+            this.Girilen.TabIndex = 0;
+            this.Girilen.Text = "0";
+            this.Girilen.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.Girilen.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Girilen_KeyDown);
+            this.Girilen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Girilen_KeyPress);
             // 
-            // label1
+            // Sonuc
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 324);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Sonuç: ";
+            this.Sonuc.AutoSize = true;
+            this.Sonuc.Location = new System.Drawing.Point(59, 324);
+            this.Sonuc.Name = "Sonuc";
+            this.Sonuc.Size = new System.Drawing.Size(56, 20);
+            this.Sonuc.TabIndex = 3;
+            this.Sonuc.Text = "Sonuç: ";
             // 
             // label2
             // 
@@ -112,12 +122,13 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.Sonuc);
+            this.Controls.Add(this.Girilen);
+            this.Controls.Add(this.Hangisine);
+            this.Controls.Add(this.Hangisinden);
             this.Name = "Form4";
             this.Text = "Form4";
+            this.Load += new System.EventHandler(this.Form4_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,10 +136,10 @@
 
         #endregion
 
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private TextBox textBox1;
-        private Label label1;
+        private ComboBox Hangisinden;
+        private ComboBox Hangisine;
+        private TextBox Girilen;
+        private Label Sonuc;
         private Label label2;
         private Label label3;
         private Label label4;
