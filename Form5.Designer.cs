@@ -52,6 +52,7 @@
             this.C = new System.Windows.Forms.Button();
             this.Display = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.TempDisplay = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Divide
@@ -213,6 +214,7 @@
             this.Sum.TabIndex = 15;
             this.Sum.Text = "+";
             this.Sum.UseVisualStyleBackColor = false;
+            this.Sum.Click += new System.EventHandler(this.Sum_Click);
             // 
             // Number1
             // 
@@ -348,6 +350,7 @@
             this.BackSpace.TabIndex = 23;
             this.BackSpace.Text = "←";
             this.BackSpace.UseVisualStyleBackColor = false;
+            this.BackSpace.Click += new System.EventHandler(this.BackSpace_Click);
             // 
             // Mod
             // 
@@ -358,7 +361,7 @@
             this.Mod.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.Mod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Mod.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Mod.Location = new System.Drawing.Point(12, 225);
+            this.Mod.Location = new System.Drawing.Point(258, 225);
             this.Mod.Name = "Mod";
             this.Mod.Size = new System.Drawing.Size(117, 71);
             this.Mod.TabIndex = 22;
@@ -374,7 +377,7 @@
             this.CE.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.CE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CE.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CE.Location = new System.Drawing.Point(135, 226);
+            this.CE.Location = new System.Drawing.Point(12, 226);
             this.CE.Name = "CE";
             this.CE.Size = new System.Drawing.Size(117, 71);
             this.CE.TabIndex = 21;
@@ -390,25 +393,27 @@
             this.C.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.C.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.C.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.C.Location = new System.Drawing.Point(258, 225);
+            this.C.Location = new System.Drawing.Point(135, 226);
             this.C.Name = "C";
             this.C.Size = new System.Drawing.Size(117, 71);
             this.C.TabIndex = 20;
             this.C.Text = "C";
             this.C.UseVisualStyleBackColor = false;
+            this.C.Click += new System.EventHandler(this.C_Click);
             // 
             // Display
             // 
             this.Display.BackColor = System.Drawing.SystemColors.Control;
             this.Display.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Display.Font = new System.Drawing.Font("Segoe UI Semibold", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Display.Location = new System.Drawing.Point(12, 12);
+            this.Display.Location = new System.Drawing.Point(12, 85);
             this.Display.Multiline = true;
             this.Display.Name = "Display";
-            this.Display.Size = new System.Drawing.Size(486, 130);
+            this.Display.Size = new System.Drawing.Size(486, 57);
             this.Display.TabIndex = 24;
             this.Display.Text = "0";
             this.Display.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Display.TextChanged += new System.EventHandler(this.Display_TextChanged);
             // 
             // button1
             // 
@@ -426,15 +431,30 @@
             this.button1.Text = "Mut Bilişim";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // TempDisplay
+            // 
+            this.TempDisplay.BackColor = System.Drawing.SystemColors.Control;
+            this.TempDisplay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TempDisplay.Font = new System.Drawing.Font("Segoe UI", 12.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TempDisplay.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.TempDisplay.Location = new System.Drawing.Point(12, 47);
+            this.TempDisplay.Multiline = true;
+            this.TempDisplay.Name = "TempDisplay";
+            this.TempDisplay.ReadOnly = true;
+            this.TempDisplay.Size = new System.Drawing.Size(486, 32);
+            this.TempDisplay.TabIndex = 26;
+            this.TempDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(510, 619);
+            this.Controls.Add(this.TempDisplay);
+            this.Controls.Add(this.Mod);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Display);
             this.Controls.Add(this.BackSpace);
-            this.Controls.Add(this.Mod);
             this.Controls.Add(this.CE);
             this.Controls.Add(this.C);
             this.Controls.Add(this.Equal);
@@ -486,5 +506,6 @@
         private Button C;
         private TextBox Display;
         private Button button1;
+        private TextBox TempDisplay;
     }
 }
