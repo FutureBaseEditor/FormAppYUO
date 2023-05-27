@@ -70,6 +70,7 @@
             this.Divide.TabIndex = 3;
             this.Divide.Text = "/";
             this.Divide.UseVisualStyleBackColor = false;
+            this.Divide.Click += new System.EventHandler(this.Divide_Click);
             // 
             // Number6
             // 
@@ -86,6 +87,7 @@
             this.Number6.TabIndex = 4;
             this.Number6.Text = "6";
             this.Number6.UseVisualStyleBackColor = false;
+            this.Number6.Click += new System.EventHandler(this.Number6_Click);
             // 
             // Number5
             // 
@@ -102,6 +104,7 @@
             this.Number5.TabIndex = 5;
             this.Number5.Text = "5";
             this.Number5.UseVisualStyleBackColor = false;
+            this.Number5.Click += new System.EventHandler(this.Number5_Click);
             // 
             // Number4
             // 
@@ -118,6 +121,7 @@
             this.Number4.TabIndex = 6;
             this.Number4.Text = "4";
             this.Number4.UseVisualStyleBackColor = false;
+            this.Number4.Click += new System.EventHandler(this.Number4_Click);
             // 
             // Multiply
             // 
@@ -134,6 +138,7 @@
             this.Multiply.TabIndex = 7;
             this.Multiply.Text = "x";
             this.Multiply.UseVisualStyleBackColor = false;
+            this.Multiply.Click += new System.EventHandler(this.Multiply_Click);
             // 
             // Number9
             // 
@@ -150,6 +155,7 @@
             this.Number9.TabIndex = 8;
             this.Number9.Text = "9\r\n";
             this.Number9.UseVisualStyleBackColor = false;
+            this.Number9.Click += new System.EventHandler(this.Number9_Click);
             // 
             // Number8
             // 
@@ -166,6 +172,7 @@
             this.Number8.TabIndex = 9;
             this.Number8.Text = "8\r\n";
             this.Number8.UseVisualStyleBackColor = false;
+            this.Number8.Click += new System.EventHandler(this.Number8_Click);
             // 
             // Number7
             // 
@@ -182,6 +189,7 @@
             this.Number7.TabIndex = 10;
             this.Number7.Text = "7";
             this.Number7.UseVisualStyleBackColor = false;
+            this.Number7.Click += new System.EventHandler(this.Number7_Click);
             // 
             // Substract
             // 
@@ -198,6 +206,7 @@
             this.Substract.TabIndex = 11;
             this.Substract.Text = "-";
             this.Substract.UseVisualStyleBackColor = false;
+            this.Substract.Click += new System.EventHandler(this.Substract_Click);
             // 
             // Sum
             // 
@@ -283,6 +292,7 @@
             this.Equal.TabIndex = 19;
             this.Equal.Text = "=";
             this.Equal.UseVisualStyleBackColor = false;
+            this.Equal.Click += new System.EventHandler(this.Equal_Click);
             // 
             // Sign
             // 
@@ -367,6 +377,7 @@
             this.Mod.TabIndex = 22;
             this.Mod.Text = "%";
             this.Mod.UseVisualStyleBackColor = false;
+            this.Mod.Click += new System.EventHandler(this.Mod_Click);
             // 
             // CE
             // 
@@ -444,6 +455,7 @@
             this.TempDisplay.Size = new System.Drawing.Size(486, 32);
             this.TempDisplay.TabIndex = 26;
             this.TempDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TempDisplay.TextChanged += new System.EventHandler(this.TempDisplay_TextChanged);
             // 
             // Form5
             // 
