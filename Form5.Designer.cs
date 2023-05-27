@@ -420,11 +420,15 @@
             this.Display.Location = new System.Drawing.Point(12, 85);
             this.Display.Multiline = true;
             this.Display.Name = "Display";
+            this.Display.ReadOnly = true;
             this.Display.Size = new System.Drawing.Size(486, 57);
-            this.Display.TabIndex = 24;
+            this.Display.TabIndex = 0;
+            this.Display.TabStop = false;
             this.Display.Text = "0";
             this.Display.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Display.TextChanged += new System.EventHandler(this.Display_TextChanged);
+            this.Display.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Display_KeyDown);
+            this.Display.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Display_KeyPress);
             // 
             // button1
             // 
@@ -489,6 +493,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form5";
             this.Text = "Calculator";
+            this.Load += new System.EventHandler(this.Form5_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

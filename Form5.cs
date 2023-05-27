@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.Design;
 
 namespace FormAppYUO
 {
@@ -53,6 +54,8 @@ namespace FormAppYUO
         }
         void PressOperation(string operationValue)
         {
+            Display.Select();
+            Display.SelectionLength = 0;
             if (TempDisplay.Text.Contains("=") && operation != "")
             {
                 
@@ -126,6 +129,10 @@ namespace FormAppYUO
             Display.Text = "0";
         }
         private void BackSpace_Click(object sender, EventArgs e)
+        {
+            PressBackSpace();
+        }
+        void PressBackSpace()
         {
             string current = Display.Text;
             string removedLast = current.Substring(0, current.Length - 1);
@@ -226,12 +233,49 @@ namespace FormAppYUO
         private void Number8_Click(object sender, EventArgs e)
         {
             PressNumber(Number8.Text);
-
         }
 
         private void Number9_Click(object sender, EventArgs e)
         {
             PressNumber(Number9.Text);
+
+        }
+
+        private void Display_KeyDown(object sender, KeyEventArgs e)
+        {
+        }
+
+        private void Form5_Load(object sender, EventArgs e)
+        {
+            Display.Select();
+            Display.SelectionLength = 0;
+        }
+
+        private void Display_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ( char.IsDigit(e.KeyChar) )
+            {
+               PressNumber(e.KeyChar.ToString());
+            }
+
+            if (e.KeyChar == '+' ||
+                e.KeyChar == '-' ||
+                
+               e.KeyChar == '/'
+               )
+            {
+                PressOperation(e.KeyChar.ToString());
+            }
+            if (e.KeyChar == '*')
+            {
+                PressOperation("x");
+            }
+
+            if (e.KeyChar == (char)Keys.Back)
+            {
+                PressBackSpace();
+            }
+
 
         }
     }
