@@ -19,30 +19,10 @@ namespace FormAppYUO
         
         void PressNumber(string number)
         {
-            //if (Display.Text == "0")
-            //    Display.Text = number;
-
-            //////////////if (operation == "")
-            //////////////{
-            //////////////    Display.Text += number;
-            //////////////}
-            //////////////else if (operation != "" && Display.Text.Length > 0 && firstValue != Display.Text)
-            //////////////{
-            //////////////    Display.Text += number;
-            //////////////}
-            //////////////else
-            //////////////{
-            //////////////    Display.Text = number;
-            //////////////}
-
-            //else if(firstValue == Display.Text && operation != "")
-            //    Display.Text += number;
-
-            //else if (firstValue == Display.Text)
-            //{
-            //    Display.Text = number;
-            //}
-
+            if (Display.Text == "0")
+                Display.Text = number;
+            else
+                Display.Text += number;
         }
         private void Number1_Click(object sender, EventArgs e)
         {
@@ -103,8 +83,7 @@ namespace FormAppYUO
             operation = "+";
             firstValue = Display.Text;
             TempDisplay.Text = $"{firstValue} {operation}";
-
-            
+            Display.Text = "0";
         }
     }
 }
